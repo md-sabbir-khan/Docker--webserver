@@ -1,0 +1,21 @@
+Docker- CE installation process on REDHAT- 8
+
+By default Docker-CE packages are not available RHEL 8 package repositories, so run following command to enable Docker CE package repository.
+
+1.Enable Docker CE Repository:
+
+	[root@localhost ~]# dnf config-manager --add-repo=https://download.docker.com/linux/centos/docker-ce.repo
+
+2.Install Docker CE using yum command:
+
+	[root@localhost ~]# yum install docker-ce -y --nobest 	
+
+3.After the installation of docker, start or enable its service using the following commands:
+
+	[root@localhost ~]# systemctl start docker
+	[root@localhost ~]# systemctl enable docker
+
+4.You can check docker verson
+	
+	[root@localhost ~]# docker --version
+	 Docker version 18.06.3-ce, build d7080c1	
