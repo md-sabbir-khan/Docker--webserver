@@ -1,0 +1,26 @@
+
+**************** Wordpress install and configration ***********************
+
+For data persistense create a new volumes command: 
+
+	1. [root@localhost ~]#docker volumes creat wp_data 
+	2. [root@localhost ~]# docker pull wordpress
+
+Then install wordpress in docker with environment variable
+
+[root@localhost ~]#docker run -dit -e WORDPRESS_DB_HOST=db_os -e WORDPRESS_DB_USER=web -e WORDPRESS_DB_PASSWORD=web001 -e WORDPRESS_DB_NAME=wp_db -v wp_data:/var/www/html -p 8080:80 --link db_os --name webserver wordpress:latest
+
+
+For connect host os use tahe fallowing 
+
+	1. falsh ip forward table:
+
+		command : [root@localhost ~]#iptables -F 
+
+	2. To show ipfowarding table 
+
+		command: [root@localhost ~]#iptables -nvL
+
+	3. To allow all trafic firewall
+  
+		command: [root@localhost ~]#iptables -P FORWARD ACCEPT
