@@ -1,0 +1,39 @@
+
+************************ Install docker compose ********************************** 
+
+ * Download docker copose:
+	
+  To create a docker compose first creat a directory
+
+ 	command : mkdir docker_compose
+ 	command : cd /docker_compose
+
+     1. command :[root@localhost ~]#curl -L "https://github.com/docker/compose/releases/download/1.25.4/docker-compose-$(uname -s)-$(uname -m)" -o /usr/local/bin/docker-compose
+
+     2 command :
+
+	[root@localhost ~]# chmod +x /usr/local/bin/docker-compose
+
+  * To check docker compose is installed or not
+
+ 	command :[root@localhost ~]#docker-compose verson
+
+  * To start autoconfig all the process docker compose- 
+
+	command :[root@localhost ~]#Docker-compose up -d
+
+
+
+
+ To see all of the cotaner of docker compose
+	[root@localhost ~]#: docker-compose ps
+
+  To stop all the cotaner docker compose
+ 	[root@localhost ~]#: docker-compose stop
+
+  To star all the cotaner docker compose
+	[root@localhost ~]#: docker-compose start
+
+  To remove Allthe cotaner using docker compose 
+	[root@localhost ~]#: docker-compose rm
+
