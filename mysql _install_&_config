@@ -1,0 +1,33 @@
+
+
+
+
+*******************Install and Configration MySQl container*********************
+
+ 1. Download mysql container, from the base os 
+	[root@localhost ~]#Docker pull mysql
+ 
+  after successfull downloading check by  [root@localhost ~]# docker images -a
+  
+  For data persistanse creat a vloumes 
+	[root@localhost ~]#docker volum creat mysql_data
+  
+  after creating vloum check by [root@localhost ~]#docker volumes ls
+  
+
+ mysql installation with environ variable [root@localhost ~]#
+
+docker run -dit -e MYSQL_ROOT_PASSWORD=toor -e MYSQL_USER=web -e MYSQL_PASSWORD=web001 -e MYSQL_DATABASE=wp_db -v mysql_data:/var/lib/mysql -p 3306:3306 --name db_os mysql:latest
+
+ if any connectivity error come up then fallow 
+
+   1. check from base os : 
+	[root@localhost ~]# mysql -h ip -u root -ptoor
+	
+	Then grant permission user and root using fallowing command
+
+
+	ALTER USER 'root'@'localhost' IDENTIFIED WITH mysql_native_password BY 'toor';
+	ALTER USER 'root'@'%' IDENTIFIED WITH mysql_native_password BY 'toor';
+	ALTER USER 'web'@'localhost' IDENTIFIED WITH mysql_native_password BY 'web001';
+	ALTER USER 'web'@'%' IDENTIFIED WITH mysql_native_password BY 'web001';
