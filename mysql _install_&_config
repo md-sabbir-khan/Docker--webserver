@@ -25,9 +25,5 @@ docker run -dit -e MYSQL_ROOT_PASSWORD=toor -e MYSQL_USER=web -e MYSQL_PASSWORD=
 	[root@localhost ~]# mysql -h ip -u root -ptoor
 	
 	Then grant permission user and root using fallowing command
-
-
-	ALTER USER 'root'@'localhost' IDENTIFIED WITH mysql_native_password BY 'toor';
-	ALTER USER 'root'@'%' IDENTIFIED WITH mysql_native_password BY 'toor';
-	ALTER USER 'web'@'localhost' IDENTIFIED WITH mysql_native_password BY 'web001';
-	ALTER USER 'web'@'%' IDENTIFIED WITH mysql_native_password BY 'web001';
+	Mysql> ALTER USER 'web'@'localhost' IDENTIFIED WITH mysql_native_password BY 'web001';
+	
