@@ -1,2 +1,2 @@
 # Docker--webserver
-How to deploy MySQL with Wordpress
+Deploy MySQL with Wordpress inside docker
